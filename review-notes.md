@@ -30,3 +30,13 @@
 - looks like when you change a directory name "03" -> "src" you need to restart webpack. is there a way to do this automatically?
 
 ![./screenshots/ex03Finish.png](./screenshots/ex03Finish.png)
+
+### EX 04 - Smart and Dumb Components
+- Something that is confusing me is what goes in the `@Component` versus what goes in the class. Looks like data goes in the class and the `@Component` is declarative
+  - As I type this out it, it makes sense that the decorator is giving the home class these attributes :smile:
+- Is it a Common Convention to have classes like this: `PersonList` and selectors for that class like this: `person-list`?
+- I didnt have to write any code for this to work. Not sure if that is how you want it set up.
+
+![./screenshots/ex04Finish.png](./screenshots/ex04Finish.png)
+
+### EX 05 -
