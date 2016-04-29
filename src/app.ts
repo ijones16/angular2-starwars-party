@@ -1,14 +1,12 @@
 import {Component} from 'angular2/core';
+import {First} from './components/first.component';
 
 @Component({
   selector: 'app',
-  template:`
-  <div class="container">
-  <i class="fa fa-star" aria-hidden="true"></i>
-  Hello World!
-  <i class="fa fa-star" aria-hidden="true"></i>
-</div>
-`
+  directives:[First],
+  template: `
+        <first></first>
+    `
 })
-export class App {
+export class App{
 }
