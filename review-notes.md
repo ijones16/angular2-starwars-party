@@ -82,3 +82,17 @@ What I think it should be:
 
 - For some reason I think of `@Input()` as sort of "PropTypes" for this component. Just the first thing I thought of
 - In the readme you say "add the `{{person.name}}` to the `h4` but in the example code its an `h5` :wink:
+
+![./screenshots/ex06and07Finish.png](./screenshots/ex06and07Finish.png)
+
+### Exercise 7 - Move the Data to a Service
+- After just reading http://nosy-dirt.surge.sh/injecting-services/index.html I was not sure how to use a service.
+- The example makes this clear though. 
+- My understanding is:
+  - You inject the service into the smart component, In this case home.
+  - You then make the service available to child components passing them done like this: `[people]=starWars.people`
+  - The PersonList now has each person from the service to give to the card.
+  
+![./screenshots/ex06and07Finish.png](./screenshots/ex06and07Finish.png)
+
+### EX 08 - 
