@@ -39,4 +39,11 @@
 
 ![./screenshots/ex04Finish.png](./screenshots/ex04Finish.png)
 
-### EX 05 -
+### EX 05 - Templates, Styles, and Built-in Directives
+- broken image under:
+    - Gotchas
+    - NgSwitchDefault *ngSwitchDefault
+- "consistently always" seems redundant :D (under gotchas)
+- good explanations. Answered my question about `*` at the end.
+  
+![./screenshots/ex05Finish.png](./screenshots/ex05Finish.png)
