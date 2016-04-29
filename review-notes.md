@@ -1,3 +1,9 @@
+# Overall Notes
+- I felt like have have come away with the basics of ng2
+- Starting webpack over and over again (when an exercise is renamed to src) was somewhat annoying (being nit picky)
+- 
+
+
 ### EX 00 - Setup
 - Setup was easy. I didnt run into any issues. 
 - I had node installed previously.
@@ -47,3 +53,32 @@
 - good explanations. Answered my question about `*` at the end.
   
 ![./screenshots/ex05Finish.png](./screenshots/ex05Finish.png)
+
+### EX 06 - Repeating Elements with ngFor
+- broken image under:
+    - Gotchas
+- wooo lots of code to add.
+- looks like the instruction "add `card` to the `PersonList`" has the wrong code attached to it.
+What it has:
+``` html
+div class="card">
+  <img [src]="person.image">
+  <div class="info">
+<h5>{{person.name}}</h5>
+<a href="#" class="btn btn-primary"><i class="fa fa-plus"></i> Add to Party</a>
+  </div>
+</div>
+```
+
+What I think it should be:
+``` html
+<div class="card-container">
+  <card
+    *ngFor="#person of people"
+    [person]="person">
+  </card>
+</div>
+```
+
+- For some reason I think of `@Input()` as sort of "PropTypes" for this component. Just the first thing I thought of
+- In the readme you say "add the `{{person.name}}` to the `h4` but in the example code its an `h5` :wink:

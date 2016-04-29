@@ -1,32 +1,44 @@
 import {Component, Input, Output, EventEmitter} from 'angular2/core';
+import {Card} from './card';
 
 @Component({
   selector: 'person-list',
-  template: `
-    <style>
-    .person { cursor: pointer; cursor: hand; }
-    </style>
+  directives: [Card],
+  template: `<style>
+  .person {
+    cursor: pointer;
+    cursor: hand;
+  }
 
-    <input [(ngModel)]="name" #i type="text">
-    <button (click)="onClick(i.value)"><i class="fa fa-plus"></i></button>
-    
-    <hr>
-    <span 
-      class="person"
-      (mouseover)="isOver = true"
-      (mouseout)="isOver = false"
-      >
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+</style>
+
+<input [(ngModel)]="name" #i type="text">
+<button (click)="onClick(i.value)"><i class="fa fa-plus"></i></button>
+
+<hr>
+<span
+  class="person"
+  (mouseover)="isOver = true"
+  (mouseout)="isOver = false"
+>
         {{name}}
-        <i 
-          *ngIf="name" 
-          class="fa" 
+        <i
+          *ngIf="name"
+          class="fa"
           [ngClass]="{'fa-star':isOver, 'fa-star-o':!isOver}">
         </i>
       </span>
-    
-  <div>
-    {{people[0].name}}
-  </div>
+<div class="card-container">
+  <card
+    *ngFor="#person of people"
+    [person]="person">
+  </card>
+</div>
 `
 })
 export class PersonList{
