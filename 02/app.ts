@@ -1,11 +1,11 @@
 import {Component} from 'angular2/core';
-import {Example} from './components/example.component';
+import {First} from './components/first.component';
 
 @Component({
   selector: 'app',
-  directives:[Example],
+  directives:[First],
   template: `
-        <example></example>
+        <First></First>{{message}}
     `
 })
 export class App{

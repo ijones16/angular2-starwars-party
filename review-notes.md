@@ -25,3 +25,8 @@
   
 ![./screenshots/ex02Finish.png](./screenshots/ex02Finish.png)
   
+### EX 03 - Handling Clicks and Refs
+- "Whats that Syntax?" needs to be filled in. Maybe go over #myInput in the input?
+- looks like when you change a directory name "03" -> "src" you need to restart webpack. is there a way to do this automatically?
+
+![./screenshots/ex03Finish.png](./screenshots/ex03Finish.png)
