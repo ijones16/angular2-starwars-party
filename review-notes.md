@@ -1,7 +1,11 @@
-# Overall Notes
+# Take Aways
 - I felt like have have come away with the basics of ng2
 - Starting webpack over and over again (when an exercise is renamed to src) was somewhat annoying (being nit picky)
-
+- The Book is a good reference. Not sure if it was meant to be uncompleted or not.
+- I want to see how you pass data inbetween routes. 
+  - I ran into this problem with react and had to go with Redux.
+- Integration with typescript seems nice. as does integration with RXjs 
+- I would feel glad i spent money on a workshop with this content.
 
 ### EX 00 - Setup
 - Setup was easy. I didnt run into any issues. 
@@ -187,3 +191,10 @@ when it actually has this:
 - pipes seem relatively easy to use
 
 ![./screenshots/ex09Finish.png](./screenshots/ex09Finish.png)
+
+### EX 10 - Adding Routes
+- No chapter in the gitbook for this example.
+- TIL: Decorators are and awesome way to declare what a componet does.
+
+
+![./screenshots/itsAParty.png](./screenshots/itsAParty.png)
