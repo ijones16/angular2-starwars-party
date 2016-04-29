@@ -5,14 +5,14 @@ import {Card} from './card';
   selector: 'person-list',
   directives: [Card],
   template: `<style>
+  .person {
+    cursor: pointer;
+    cursor: hand;
+  }
   .card-container{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-  }
-  .person {
-    cursor: pointer;
-    cursor: hand;
   }
 </style>
 

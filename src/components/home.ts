@@ -13,7 +13,7 @@ import {StarWars} from '../services/starwars';
     
     <hr>
     
-    <person-list (select)="onSelect($event)" [people]="starWars.people"></person-list>
+    <person-list (select)="onSelect($event)" [people]="starWars.people | async"></person-list>
 `
 })
 export class Home{

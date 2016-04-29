@@ -1,7 +1,6 @@
 # Overall Notes
 - I felt like have have come away with the basics of ng2
 - Starting webpack over and over again (when an exercise is renamed to src) was somewhat annoying (being nit picky)
-- 
 
 
 ### EX 00 - Setup
@@ -81,7 +80,7 @@ What I think it should be:
 ```
 
 - For some reason I think of `@Input()` as sort of "PropTypes" for this component. Just the first thing I thought of
-- In the readme you say "add the `{{person.name}}` to the `h4` but in the example code its an `h5` :wink:
+- In the readme you say "add the `{{person.name}}` to the `h4`" but in the example code its an `h5` :wink:
 
 ![./screenshots/ex06and07Finish.png](./screenshots/ex06and07Finish.png)
 
@@ -95,4 +94,88 @@ What I think it should be:
   
 ![./screenshots/ex06and07Finish.png](./screenshots/ex06and07Finish.png)
 
-### EX 08 - 
+### EX 08 - Loading Data with Http
+- broken image under:
+    - Gotchas
+- uh oh - async pipe :scream:
+- In book you have `const STARWARS_API = 'http://localhost:5000';` but the apiserver is on port 4000 :simple_smile:
+- Has the same explanation of `@Injectable` and "Importing vs Injecting" as chapter 09 or "Injecting Services"
+- The | async is soooo cool. Ive been dealing with rendering data from a backend server in react... this seems elegant comparatively.
+- The code in the gitbook has extra things going on (starwars service):
+
+``` javascript
+@Injectable()
+export class StarWarsService{
+    people = this._http.get(`${STARWARS_API}/people`)
+            .map(res => res.json());    
+
+    starships = this._http.get(`${STARWARS_API}/starships`)
+            .map(res => res.json());
+
+    vehicles = this._http.get(`${STARWARS_API}/vehicles`)
+            .map(res => res.json());
+
+    constructor(private _http:Http){}
+}
+```
+
+Where the example code has this: 
+``` javascript
+@Injectable()
+export class StarWars{
+  people;
+  constructor(private _http:Http){
+    this.people = _http.get(`${API}/people`)
+      .map(res => res.json() //get the response as json
+        .map(person =>
+          Object.assign(person, {image: `${API}/${person.image}`})
+        )
+      )
+  }
+}
+```
+
+And then it says that the home component has this:
+
+``` html
+@Component({
+    selector: 'home',
+    template: `
+        <h2>People</h2>
+        <div *ngFor="#person of starwarsService.people | async">
+        {{person.name}}
+      </div>
+
+      <h2>Starships</h2>
+        <div *ngFor="#starship of starwarsService.starships | async">
+        {{starship.name}}
+      </div>
+
+      <h2>Vehicles</h2>
+        <div *ngFor="#vehicle of starwarsService.vehicles | async">
+        {{vehicle.name}}
+      </div>
+    `
+})
+```
+
+when it actually has this:
+
+``` html
+@Component({
+  selector: 'home',
+  directives: [PersonList],
+  providers: [StarWars],
+  template: `
+    <i class="fa fa-home" aria-hidden="true"></i>
+    <span>I'm the home template</span>
+    <i class="fa fa-home" aria-hidden="true"></i>
+    
+    <hr>
+    
+    <person-list (select)="onSelect($event)" [people]="starWars.people | async"></person-list>
+`
+})
+```
+
+![./screenshots/ex08Finish.png](./screenshots/ex08Finish.png)
