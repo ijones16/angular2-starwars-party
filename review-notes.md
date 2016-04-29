@@ -179,3 +179,11 @@ when it actually has this:
 ```
 
 ![./screenshots/ex08Finish.png](./screenshots/ex08Finish.png)
+
+
+### EX 09 - Searching Data with a Pipe?
+- EX09 is never mentioned in the instructions (im guessing the second ex08 is supposed to be 9)
+- No chapter in the gitbook for this example.
+- pipes seem relatively easy to use
+
+![./screenshots/ex09Finish.png](./screenshots/ex09Finish.png)

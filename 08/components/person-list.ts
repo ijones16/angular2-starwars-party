@@ -1,11 +1,9 @@
 import {Component, Input, Output, EventEmitter} from 'angular2/core';
 import {Card} from './card';
-import {Search} from '../pipes/search';
 
 @Component({
   selector: 'person-list',
   directives: [Card],
-  pipes:[Search],
   template: `<style>
   .person {
     cursor: pointer;
@@ -18,11 +16,25 @@ import {Search} from '../pipes/search';
   }
 </style>
 
-<input [(ngModel)]="name" type="text">
+<input [(ngModel)]="name" #i type="text">
+<button (click)="onClick(i.value)"><i class="fa fa-plus"></i></button>
 
+<hr>
+<span
+  class="person"
+  (mouseover)="isOver = true"
+  (mouseout)="isOver = false"
+>
+        {{name}}
+        <i
+          *ngIf="name"
+          class="fa"
+          [ngClass]="{'fa-star':isOver, 'fa-star-o':!isOver}">
+        </i>
+      </span>
 <div class="card-container">
   <card
-    *ngFor="#person of people | search:'name':name"
+    *ngFor="#person of people"
     [person]="person">
   </card>
 </div>
